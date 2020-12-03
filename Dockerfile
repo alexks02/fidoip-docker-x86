@@ -61,4 +61,4 @@ RUN rm fidoip-1.0.5_5-1.tar \
 
 VOLUME /usr/local/etc /usr/local/bin /home/fido
 
-CMD /usr/sbin/binkd /etc/binkd/binkd.cfg -q -C
+CMD /usr/local/sbin/binkd /usr/local/etc/binkd.cfg -q -C

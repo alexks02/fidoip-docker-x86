@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   fidoip:
-    image: fidoip32
+    image: alexks02/fidoip32
     container_name: fidoip
     restart: unless-stopped
     volumes:
