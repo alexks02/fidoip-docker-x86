@@ -1,0 +1,10 @@
+version: "2.1"
+services:
+  fidoip:
+    image: fidoip32
+    container_name: fidoip
+    restart: unless-stopped
+    volumes:
+     - /volume1/homes/xander/fidoip-docker-x86/home:/home/fido
+     - /volume1/homes/xander/fidoip-docker-x86/usr/local/etc:/usr/local/etc
+     - /volume1/homes/xander/fidoip-docker-x86/usr/local/bin:/usr/local/bin

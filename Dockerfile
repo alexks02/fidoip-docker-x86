@@ -7,7 +7,7 @@ MAINTAINER Dmitry V. Luciv <dluciv@dluciv.name>
 
 RUN apt-get -y update \
  && apt-get -y upgrade \
- && apt-get -y install screen \
+ && apt-get -y install perl-modules tzdata screen locales \
  && useradd -G root -U -m -s /bin/bash fido \
  && mkdir -p /usr/local/etc \
  && echo 'export LANG=ru_RU.UTF-8' > /home/fido/.bashrc \
@@ -60,3 +60,5 @@ RUN rm fidoip-1.0.5_5-1.tar \
 # Sharing
 
 VOLUME /usr/local/etc /usr/local/bin /home/fido
+
+CMD /usr/sbin/binkd /etc/binkd/binkd.cfg -q -C
