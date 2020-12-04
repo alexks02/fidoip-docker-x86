@@ -5,6 +5,6 @@ services:
     container_name: fidoip
     restart: unless-stopped
     volumes:
-     - /volume1/homes/xander/fidoip-docker-x86/home:/home/fido
-     - /volume1/homes/xander/fidoip-docker-x86/usr/local/etc:/usr/local/etc
-     - /volume1/homes/xander/fidoip-docker-x86/usr/local/bin:/usr/local/bin
+     - ./home/fido:/home/fido
+     - ./etc:/usr/local/etc
+     - ./bin:/usr/local/bin

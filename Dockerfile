@@ -7,7 +7,7 @@ MAINTAINER Dmitry V. Luciv <dluciv@dluciv.name>
 
 RUN apt-get -y update \
  && apt-get -y upgrade \
- && apt-get -y install perl-modules tzdata screen locales \
+ && apt-get -y install perl-modules tzdata screen locales cron \
  && useradd -G root -U -m -s /bin/bash fido \
  && mkdir -p /usr/local/etc \
  && echo 'export LANG=ru_RU.UTF-8' > /home/fido/.bashrc \
@@ -59,6 +59,6 @@ RUN rm fidoip-1.0.5_5-1.tar \
 
 # Sharing
 
-VOLUME /usr/local/etc /usr/local/bin /home/fido
+VOLUME /usr/local/etc /usr/local/bin /home/fido /var/spool/cron/crontabs
 
-CMD /usr/local/sbin/binkd /usr/local/etc/binkd.cfg -q -C
+CMD cron && /usr/local/sbin/binkd /usr/local/etc/binkd.cfg -q -C
