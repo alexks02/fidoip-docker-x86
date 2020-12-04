@@ -5,6 +5,6 @@ services:
     container_name: fidoip
     restart: unless-stopped
     volumes:
-     - ./home/fido:/home/fido
+     - ./home:/home/fido
      - ./etc:/usr/local/etc
      - ./bin:/usr/local/bin
